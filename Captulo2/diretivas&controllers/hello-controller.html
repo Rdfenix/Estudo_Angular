@@ -1,0 +1,24 @@
+<!--Hello controller-->
+<!DOCTYPE html>
+<html ng-app="notesApp">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body ng-controller="MainCtrl as ctrl">
+
+    {{ctrl.helloMsg}} AngularJs.
+    <br>
+    {{ctrl.goodByMsg}} AngularJs
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+    <script type="text/javascript">
+        angular.module('notesApp', [])
+          .controller('MainCtrl', [function(){
+              this.helloMsg = 'Hello';
+              /**As variaveis do tipo VAR não são apresentados nos NG-Bind do HTML*/
+              var goodByMsg  ='Goodbye';
+          }]);
+    </script>
+  </body>
+</html>

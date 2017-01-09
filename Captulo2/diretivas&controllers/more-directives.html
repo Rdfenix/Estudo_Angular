@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html ng-app="notesApp">
+  <head>
+    <meta charset="utf-8">
+    <style media="screen">
+      .done{
+        background-color: green;
+      }
+      .pending{
+        background-color: red;
+      }
+    </style>
+  </head>
+  <body ng-controller="MainCtrl as ctrl">
+
+    <div ng-repeat="note in ctrl.notes" ng-class="ctrl.getNoteClass(note.done)">
+      <span class="label">{{note.label}}</span>
+      <span class="assigne" ng-show="note.assigne" ng-bind="note.assigne"></span>
+    </div>
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+    <script type="text/javascript">
+        angular.module('notesApp', [])
+          .controller('MainCtrl', [function(){
+            var self = this;
+            self.notes = [
+              {id: 1, label: 'First Note', done: false},
+              {id: 2, label: 'Second Note', done: false},
+              {id: 3, label: 'Done Note', done: true},
+              {id: 4, label: 'Last Note', done: false}
+            ];
+            self.getNoteClass = function(status){
+              return{
+                done: status,
+                pending: !status
+              };
+            };
+          }]);
+    </script>
+  </body>
+</html>
