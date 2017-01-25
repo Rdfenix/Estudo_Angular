@@ -1,0 +1,25 @@
+{
+	"name": "estudo_angular",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Rdfenix/Estudo_Angular.git"
+	},
+	"author": "Rudnei",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/Rdfenix/Estudo_Angular/issues"
+	},
+	"homepage": "https://github.com/Rdfenix/Estudo_Angular#readme",
+	"dependencies": {
+		"jasmine-core": "^2.5.2",
+		"karma": "^1.4.0",
+		"karma-chrome-launcher": "^2.0.0",
+		"karma-jasmine": "^1.1.0"
+	}
+}
