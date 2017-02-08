@@ -1,0 +1,39 @@
+<!-- checkbox exemplo -->
+<!DOCTYPE html>
+<html ng-app="notesApp">
+  <head>
+    <meta charset="utf-8">
+  </head>
+  <body ng-controller="MainCtrl as ctrl">
+    <div>
+      <h2>What are Your Favorite Sports?</h2>
+      <div ng-repeat="sport in ctrl.sports">
+        <label ng-bind="sport.label"></label>
+        <div>
+          With Binding:
+          <input type="checkbox" ng-model="sport.selected" ng-true-value="YES" ng-false-value="NO">
+        </div>
+        <div>
+          Using o Ng-Checked:
+          <input type="checkbox" ng-checked="sport.selected === 'YES'">
+        </div>
+        <div>
+          Current State: {{sport.selected}}
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+    <script type="text/javascript">
+      angular.module('notesApp', []).controller('MainCtrl', [function(){
+        var self = this;
+
+        self.sports = [
+          {label: 'Basketball', selected: 'YES'},
+          {label: 'Criket', selected: 'NO'},
+          {label: 'Soccer', selected: 'NO'},
+          {label: 'Swing', selected: 'YES'}
+        ];
+      }]);
+    </script>
+  </body>
+</html>

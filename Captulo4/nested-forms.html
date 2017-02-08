@@ -1,0 +1,29 @@
+<!-- nested forms -->
+<!DOCTYPE html>
+<html ng-app>
+  <head>
+    <meta charset="utf-8">
+  </head>
+  <body>
+
+    <form novalidate name="myForm">
+      <input type="text" class="username" name="uname" ng-model="ctrl.user.username" required placeholder="username" ng-minlength="4">
+      <input type="password" class"password" name="pwd" ng-model="ctrl.user.password" required placeholder="password">
+
+      <ng-fomr name="profile">
+        <input type="text" name="firstName" ng-model="ctrl.user.profile.firstName" placeholder="First Name" required>
+        <input type="text" name="middleName" placeholder="Middlew Name" ng-model="ctrl.user.profile.middlewName">
+        <input type="text" name="lastName" placeholder="Last Name" ng-model="ctrl.user.profile.lastName">
+        <input type="date" name="dob" placeholder="Date of Birth" ng-model="ctrl.user.profile.dob">
+      </ng-fomr>
+
+      <span ng-show="myForm.profile.$invalid">
+        Plesase fill out the profile information
+      </span>
+
+      <input type="submit" value="Submit" ng-disabled="myForm.$invalid">
+    </form>
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+  </body>
+</html>
