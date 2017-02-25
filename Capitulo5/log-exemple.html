@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html ng-app="appNotes">
+  <head>
+    <meta charset="utf-8">
+  </head>
+  <body ng-controller="MainCtrl as mainCtrl">
+    <h1>Hello Services !</h1>
+    <button ng-click="mainCtrl.logStuff()">Log Something</button>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+    <script type="text/javascript">
+      angular.module('appNotes',[]).controller('MainCtrl', ['$log', function($log){
+        var self = this;
+        self.logStuff = function(){
+          $log.log('The button was pressed');
+        };
+      }]);
+    </script>
+  </body>
+</html>
